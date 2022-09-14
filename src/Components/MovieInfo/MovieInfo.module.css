@@ -1,0 +1,62 @@
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 920px) {
+  .main {
+    flex-direction: column;
+  }
+}
+.main .poster {
+  padding: 2rem;
+}
+@media only screen and (max-width: 920px) {
+  .main .poster {
+    padding: 1rem;
+  }
+}
+.main .movieText {
+  max-width: 100%;
+  padding: 2rem;
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+@media only screen and (max-width: 920px) {
+  .main .movieText {
+    padding: 1rem;
+  }
+}
+.main .movieText .headerInfo {
+  margin-bottom: 1rem;
+}
+.main .movieText .headerInfo h1 span {
+  color: #aaa;
+  font-weight: normal;
+}
+.main .movieText .description h3 {
+  margin-bottom: 0.5rem;
+}
+.main .movieText .whereTos {
+  margin-top: 1rem;
+  display: flex;
+}
+.main .movieText .whereTos img {
+  max-width: 50px;
+  border-radius: 0.5rem;
+  margin: 3px;
+}
+.main .movieText .whereTos img.disney {
+  filter: invert(1);
+}
+.main .movieText .cast {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+@media only screen and (max-width: 920px) {
+  .main .movieText .cast {
+    display: none;
+  }
+}

@@ -1,0 +1,90 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  padding: 1rem;
+  background: #0f0f0f;
+  border-radius: 0 0 1rem 1rem;
+  margin: 0 0.5rem;
+}
+.main h1 {
+  cursor: default;
+  animation: slidein;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+  color: white;
+}
+.main h1 .full {
+  opacity: 0;
+  transition: all 250ms ease;
+}
+.main h1 .abbr {
+  opacity: 1;
+  transition: all 250ms ease;
+}
+.main h1:hover {
+  animation: slideout;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+}
+.main h1:hover .full {
+  opacity: 1;
+  transition: all 250ms ease;
+}
+.main h1:hover .abbr {
+  opacity: 0;
+  transition: all 250ms ease;
+}
+.main > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.main > div svg {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 250ms ease;
+  color: white;
+}
+.main > div svg:hover {
+  transform: scale(1.1);
+  transition: all 250ms ease;
+}
+.main > div .search {
+  align-items: center;
+  gap: 1rem;
+  transform: translateX(500px);
+  transition: all 250ms ease;
+  display: none;
+}
+.main > div .search input {
+  width: 300px;
+  background: #2f2f2f;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+.main > div .search.searching {
+  transform: translateX(0);
+  display: flex;
+}
+@keyframes slideout {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+@keyframes slidein {
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
