@@ -4,7 +4,7 @@ import TopBar from "./Components/TopBar/TopBar";
 import Home from "./Components/Home/Home";
 
 export function makeRequest(specs) {
-return `https://api.themoviedb.org/3${specs}?api_key=7fd7d7e0d432031c5ae55f16dced0d2a`;
+return `https://api.themoviedb.org/3${specs}?api_key=7fd7d7e0d432031c5ae55f16dced0d2a&language=fr-FR`;
 
 }
 
