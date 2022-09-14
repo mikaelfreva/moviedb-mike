@@ -3,7 +3,6 @@ import { classNames, makeRequest } from "../../App";
 import MoviePoster from "../MoviePoster/MoviePoster";
 import Style from "./Home.module.css";
 import MovieModal from "../MovieModal/MovieModal";
-import CastModal from "../CastModal/CastModal";
 
 export default function Home(props) {
   const { searchResults } = props;
