@@ -1,6 +1,7 @@
 .main {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-top: none;
@@ -24,19 +25,8 @@
   opacity: 1;
   transition: all 250ms ease;
 }
-.main h1:hover {
-  animation: slideout;
-  animation-duration: 250ms;
-  animation-fill-mode: forwards;
-}
-.main h1:hover .full {
-  opacity: 1;
-  transition: all 250ms ease;
-}
-.main h1:hover .abbr {
-  opacity: 0;
-  transition: all 250ms ease;
-}
+
+
 .main > div {
   display: flex;
   align-items: center;
