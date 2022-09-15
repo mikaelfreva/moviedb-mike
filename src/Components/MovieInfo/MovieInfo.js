@@ -9,9 +9,9 @@ import amazonLogo from "../../media/prime.jpeg";
 import googlePlayLogo from "../../media/googleplay.png";
 import youtubeLogo from "../../media/yt.png";
 import vuduLogo from "../../media/vudu.png";
+import {makePosterImageUrl} from "../../App";
 
 function MovieInfo(props) {
-    console.log(props);
     const {movie} = props;
     const genres = movie?.genres?.map(genre => genre.name);
     const genresList = genres?.join(', ');
@@ -28,7 +28,8 @@ function MovieInfo(props) {
     const googlePlay = allProviders?.includes("Google Play Movies");
     const youtube = allProviders?.includes("YouTube");
     const vudu = allProviders?.includes("Vudu");
-
+    const posterPath = movie?.poster_path;
+    const imageUrl = makePosterImageUrl(posterPath);
     function getFromStreamers(prop) {
         return streamers?.[prop]?.map(provider => provider.provider_name);
     }
@@ -56,7 +57,10 @@ function MovieInfo(props) {
 
     return (
         <div className={Style.main}>
-            <MoviePoster movie={movie} size={"large"} className={Style.poster} hover={false}/>
+            <img className={Style.imageModal} width="300px" src={`${posterPath ? imageUrl : "https://critics.io/img/movies/poster-placeholder.png"}`} alt="" />
+            <div>
+                
+            </div>
             <div className={Style.movieText}>
                 <div className={Style.headerInfo}>
                     <h1>{movie.title} <span>({movie?.release_date?.slice(0, 4)})</span></h1>

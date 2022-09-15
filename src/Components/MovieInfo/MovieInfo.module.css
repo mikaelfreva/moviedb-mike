@@ -51,3 +51,6 @@
   filter: invert(1);
 }
 
+.imageModal{
+  border-radius: 0 30px 30px 0;
+}
