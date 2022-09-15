@@ -5,6 +5,13 @@
   align-items: center;
   justify-content: center;
 }
+@media only screen and (min-width: 920px) {
+  .imageModal{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 @media only screen and (max-width: 920px) {
   .main {
     flex-direction: column;
@@ -55,6 +62,3 @@
   filter: invert(1);
 }
 
-.imageModal{
-  border-radius: 0 30px 30px 0;
-}
