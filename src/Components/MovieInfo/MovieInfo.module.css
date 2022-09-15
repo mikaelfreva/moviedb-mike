@@ -50,13 +50,4 @@
 .main .movieText .whereTos img.disney {
   filter: invert(1);
 }
-.main .movieText .cast {
-  margin-top: 1rem;
-  display: flex;
-  gap: 0.5rem;
-}
-@media only screen and (max-width: 920px) {
-  .main .movieText .cast {
-    display: none;
-  }
-}
+

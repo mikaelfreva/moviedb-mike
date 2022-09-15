@@ -6,7 +6,7 @@ import {makeBackdropImageUrl, makeRequest} from "../../App";
 import MovieInfo from "../MovieInfo/MovieInfo";
 
 function MovieModal(props) {
-    const {movie, onCloseModal, onClickCastCard} = props;
+    const {movie, onCloseModal} = props;
     const backdrop = movie.backdrop_path;
     const bgUrl = makeBackdropImageUrl(backdrop);
     const url = makeRequest(`/movie/${movie.id}`);
@@ -28,7 +28,7 @@ function MovieModal(props) {
                     <div className={Style.closeIcon} onClick={onCloseModal}>
                         <FontAwesomeIcon icon={faTimes}/>
                     </div>
-                    <MovieInfo movie={movieInternal} onClickCastCard={onClickCastCard}/>
+                    <MovieInfo movie={movieInternal}/>
                 </div>
             </div>
         </div>

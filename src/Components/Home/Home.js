@@ -10,7 +10,6 @@ export default function Home(props) {
   const [popularMovies, setPopularMovies] = useState([]);
   const [showMovie, setShowMovie] = useState(false);
   const [movie, setMovie] = useState({});
-  const [person, setPerson] = useState({});
 
   useEffect(() => {
     fetch(url)
@@ -19,17 +18,6 @@ export default function Home(props) {
   }, [url]);
 
   function onClickPoster(movie) {
-    setShowMovie(true);
-    setMovie(movie);
-  }
-
-  function onClickCastCard(person) {
-    setShowMovie(false);
-    setPerson(person);
-  }
-
-  function onClickMovie(movie) {
-    setPerson({});
     setShowMovie(true);
     setMovie(movie);
   }
@@ -59,7 +47,6 @@ export default function Home(props) {
           onCloseModal={() => setShowMovie(false)}
         />
       )}
- 
     </div>
   );
 }

@@ -11,12 +11,11 @@ import youtubeLogo from "../../media/yt.png";
 import vuduLogo from "../../media/vudu.png";
 
 function MovieInfo(props) {
-    const {movie, onClickCastCard} = props;
+    console.log(props);
+    const {movie} = props;
     const genres = movie?.genres?.map(genre => genre.name);
     const genresList = genres?.join(', ');
-    const [castUrl, setCastUrl] = useState('')
     const [streamUrl, setStreamUrl] = useState('');
-    const [cast, setCast] = useState([]);
     const [streamers, setStreamers] = useState([]);
     const flatRate = getFromStreamers("flatrate");
     const rent = getFromStreamers("rent");
@@ -35,26 +34,12 @@ function MovieInfo(props) {
     }
 
     useEffect(() => {
-        if(castUrl) {
-            fetch(castUrl).then(resp => resp.json())
-                .then(info => {
-                    const cast = info.cast;
-                    const compactCast = cast?.splice(0, 5);
-                    setCast(compactCast)
-                });
-        }
-
         if (streamUrl) {
             fetch(streamUrl).then(resp => resp.json())
                 .then(info => setStreamers(info?.results?.US));
         }
-    }, [castUrl, streamUrl]);
+    }, [streamUrl]);
 
-    useEffect(() => {
-        if (movie.id) {
-            setCastUrl(makeRequest(`/movie/${movie.id}/credits`))
-        }
-    }, [movie.id])
 
     useEffect(() => {
         if (movie.id) {
