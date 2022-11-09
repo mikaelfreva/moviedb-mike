@@ -30,14 +30,16 @@ function TopBar(props) {
     }
   }, [url, search]);
   return (
-    <div className={Style.main}>
+    <div className={Style.main}
+    onClick={() => setSearching(!searching)}
+    >
       <h1>
         <span className={Style.abbr}>Choisissez un film</span>
       </h1>
       <div>
         <FontAwesomeIcon
           icon={faSearch}
-          onClick={() => setSearching(!searching)}
+        
         />
         <div className={classNames(Style.search, searching && Style.searching)}>
           <input
