@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import Style from "./MovieInfo.module.css";
-import MoviePoster from "../MoviePoster/MoviePoster";
 import {makeRequest} from "../../App";
 import disneyPlus from "../../media/disney-plus.png";
 import netflixLogo from "../../media/netflix.jpeg";
